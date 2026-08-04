@@ -1,0 +1,175 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\keena\\Desktop\\RMS Cafe\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B0B90E86-1989-492D-BB8A-7DB6990779CB}|RMS Cafe\\RMS Cafe.csproj|c:\\users\\keena\\desktop\\rms cafe\\rms cafe\\dashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B0B90E86-1989-492D-BB8A-7DB6990779CB}|RMS Cafe\\RMS Cafe.csproj|solutionrelative:rms cafe\\dashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0B90E86-1989-492D-BB8A-7DB6990779CB}|RMS Cafe\\RMS Cafe.csproj|C:\\Users\\keena\\Desktop\\RMS Cafe\\rms cafe\\reports.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0B90E86-1989-492D-BB8A-7DB6990779CB}|RMS Cafe\\RMS Cafe.csproj|solutionrelative:rms cafe\\reports.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0B90E86-1989-492D-BB8A-7DB6990779CB}|RMS Cafe\\RMS Cafe.csproj|C:\\Users\\keena\\Desktop\\RMS Cafe\\rms cafe\\reports.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B0B90E86-1989-492D-BB8A-7DB6990779CB}|RMS Cafe\\RMS Cafe.csproj|solutionrelative:rms cafe\\reports.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0B90E86-1989-492D-BB8A-7DB6990779CB}|RMS Cafe\\RMS Cafe.csproj|C:\\Users\\keena\\Desktop\\RMS Cafe\\rms cafe\\employees.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0B90E86-1989-492D-BB8A-7DB6990779CB}|RMS Cafe\\RMS Cafe.csproj|solutionrelative:rms cafe\\employees.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0B90E86-1989-492D-BB8A-7DB6990779CB}|RMS Cafe\\RMS Cafe.csproj|C:\\Users\\keena\\Desktop\\RMS Cafe\\rms cafe\\employees.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B0B90E86-1989-492D-BB8A-7DB6990779CB}|RMS Cafe\\RMS Cafe.csproj|solutionrelative:rms cafe\\employees.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0B90E86-1989-492D-BB8A-7DB6990779CB}|RMS Cafe\\RMS Cafe.csproj|C:\\Users\\keena\\Desktop\\RMS Cafe\\rms cafe\\dashboard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0B90E86-1989-492D-BB8A-7DB6990779CB}|RMS Cafe\\RMS Cafe.csproj|solutionrelative:rms cafe\\dashboard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0B90E86-1989-492D-BB8A-7DB6990779CB}|RMS Cafe\\RMS Cafe.csproj|C:\\Users\\keena\\Desktop\\RMS Cafe\\rms cafe\\inventory.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0B90E86-1989-492D-BB8A-7DB6990779CB}|RMS Cafe\\RMS Cafe.csproj|solutionrelative:rms cafe\\inventory.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0B90E86-1989-492D-BB8A-7DB6990779CB}|RMS Cafe\\RMS Cafe.csproj|C:\\Users\\keena\\Desktop\\RMS Cafe\\rms cafe\\interface.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B0B90E86-1989-492D-BB8A-7DB6990779CB}|RMS Cafe\\RMS Cafe.csproj|solutionrelative:rms cafe\\interface.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0B90E86-1989-492D-BB8A-7DB6990779CB}|RMS Cafe\\RMS Cafe.csproj|C:\\Users\\keena\\Desktop\\RMS Cafe\\rms cafe\\posterminal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B0B90E86-1989-492D-BB8A-7DB6990779CB}|RMS Cafe\\RMS Cafe.csproj|solutionrelative:rms cafe\\posterminal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0B90E86-1989-492D-BB8A-7DB6990779CB}|RMS Cafe\\RMS Cafe.csproj|C:\\Users\\keena\\Desktop\\RMS Cafe\\rms cafe\\inventory.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B0B90E86-1989-492D-BB8A-7DB6990779CB}|RMS Cafe\\RMS Cafe.csproj|solutionrelative:rms cafe\\inventory.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Reports.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\keena\\Desktop\\RMS Cafe\\RMS Cafe\\Reports.xaml.cs",
+              "RelativeDocumentMoniker": "RMS Cafe\\Reports.xaml.cs",
+              "ToolTip": "C:\\Users\\keena\\Desktop\\RMS Cafe\\RMS Cafe\\Reports.xaml.cs",
+              "RelativeToolTip": "RMS Cafe\\Reports.xaml.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAiwJQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-03T18:24:04.582Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Reports.xaml",
+              "DocumentMoniker": "C:\\Users\\keena\\Desktop\\RMS Cafe\\RMS Cafe\\Reports.xaml",
+              "RelativeDocumentMoniker": "RMS Cafe\\Reports.xaml",
+              "ToolTip": "C:\\Users\\keena\\Desktop\\RMS Cafe\\RMS Cafe\\Reports.xaml",
+              "RelativeToolTip": "RMS Cafe\\Reports.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-08-03T16:03:11.91Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Employees.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\keena\\Desktop\\RMS Cafe\\RMS Cafe\\Employees.xaml.cs",
+              "RelativeDocumentMoniker": "RMS Cafe\\Employees.xaml.cs",
+              "ToolTip": "C:\\Users\\keena\\Desktop\\RMS Cafe\\RMS Cafe\\Employees.xaml.cs",
+              "RelativeToolTip": "RMS Cafe\\Employees.xaml.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAgwGwAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-03T15:34:08.347Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Employees.xaml",
+              "DocumentMoniker": "C:\\Users\\keena\\Desktop\\RMS Cafe\\RMS Cafe\\Employees.xaml",
+              "RelativeDocumentMoniker": "RMS Cafe\\Employees.xaml",
+              "ToolTip": "C:\\Users\\keena\\Desktop\\RMS Cafe\\RMS Cafe\\Employees.xaml",
+              "RelativeToolTip": "RMS Cafe\\Employees.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-08-03T15:09:31.849Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Inventory.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\keena\\Desktop\\RMS Cafe\\RMS Cafe\\Inventory.xaml.cs",
+              "RelativeDocumentMoniker": "RMS Cafe\\Inventory.xaml.cs",
+              "ToolTip": "C:\\Users\\keena\\Desktop\\RMS Cafe\\RMS Cafe\\Inventory.xaml.cs",
+              "RelativeToolTip": "RMS Cafe\\Inventory.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-03T14:47:32.75Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Dashboard.xaml",
+              "DocumentMoniker": "C:\\Users\\keena\\Desktop\\RMS Cafe\\RMS Cafe\\Dashboard.xaml",
+              "RelativeDocumentMoniker": "RMS Cafe\\Dashboard.xaml",
+              "ToolTip": "C:\\Users\\keena\\Desktop\\RMS Cafe\\RMS Cafe\\Dashboard.xaml",
+              "RelativeToolTip": "RMS Cafe\\Dashboard.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-08-03T14:45:38.855Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Dashboard.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\keena\\Desktop\\RMS Cafe\\RMS Cafe\\Dashboard.xaml.cs",
+              "RelativeDocumentMoniker": "RMS Cafe\\Dashboard.xaml.cs",
+              "ToolTip": "C:\\Users\\keena\\Desktop\\RMS Cafe\\RMS Cafe\\Dashboard.xaml.cs",
+              "RelativeToolTip": "RMS Cafe\\Dashboard.xaml.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAcwEYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-03T14:54:46.026Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "POSTerminal.xaml",
+              "DocumentMoniker": "C:\\Users\\keena\\Desktop\\RMS Cafe\\RMS Cafe\\POSTerminal.xaml",
+              "RelativeDocumentMoniker": "RMS Cafe\\POSTerminal.xaml",
+              "ToolTip": "C:\\Users\\keena\\Desktop\\RMS Cafe\\RMS Cafe\\POSTerminal.xaml",
+              "RelativeToolTip": "RMS Cafe\\POSTerminal.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-08-03T14:45:57.936Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Interface.xaml",
+              "DocumentMoniker": "C:\\Users\\keena\\Desktop\\RMS Cafe\\RMS Cafe\\Interface.xaml",
+              "RelativeDocumentMoniker": "RMS Cafe\\Interface.xaml",
+              "ToolTip": "C:\\Users\\keena\\Desktop\\RMS Cafe\\RMS Cafe\\Interface.xaml",
+              "RelativeToolTip": "RMS Cafe\\Interface.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-08-03T14:45:45.978Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Inventory.xaml",
+              "DocumentMoniker": "C:\\Users\\keena\\Desktop\\RMS Cafe\\RMS Cafe\\Inventory.xaml",
+              "RelativeDocumentMoniker": "RMS Cafe\\Inventory.xaml",
+              "ToolTip": "C:\\Users\\keena\\Desktop\\RMS Cafe\\RMS Cafe\\Inventory.xaml",
+              "RelativeToolTip": "RMS Cafe\\Inventory.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-08-03T14:34:43.367Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

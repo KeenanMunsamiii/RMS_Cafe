@@ -1,0 +1,350 @@
+﻿<Window x:Class="RMS_Cafe.POSTerminal"
+        
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="RMS Cafe - POS Terminal" Height="768" Width="1200"
+        WindowStartupLocation="CenterScreen" Background="#F4F6F8"
+        FontFamily="Segoe UI"
+        UseLayoutRounding="True"
+        SnapsToDevicePixels="True"
+        TextOptions.TextFormattingMode="Display"
+        TextOptions.TextRenderingMode="ClearType">
+
+    <Window.Resources>
+        <!-- Color Palette -->
+        <SolidColorBrush x:Key="BrandBlack" Color="#1E1E1E"/>
+        <SolidColorBrush x:Key="BrandGold" Color="#D4AF37"/>
+        <SolidColorBrush x:Key="TextDark" Color="#333333"/>
+        <SolidColorBrush x:Key="TextLight" Color="#888888"/>
+
+        <!-- Sidebar Button Style -->
+        <Style x:Key="SidebarButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="3,0,0,0"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="17,15"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="Center" Margin="{TemplateBinding Padding}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#2A2A2A"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Category Tab Style -->
+        <Style x:Key="CategoryTabStyle" TargetType="RadioButton">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Border x:Name="border" Background="Transparent" Padding="20,10" Cursor="Hand">
+                            <TextBlock x:Name="txt" Text="{TemplateBinding Content}" Foreground="{StaticResource TextDark}" HorizontalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource BrandGold}"/>
+                                <Setter TargetName="txt" Property="Foreground" Value="White"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Outline Button Style -->
+        <Style x:Key="OutlineButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#DDDDDD"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="15,8"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="350"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- SIDEBAR -->
+        <Border Grid.Row="0" Grid.Column="0" Background="{StaticResource BrandBlack}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Margin="20,30,20,30">
+                    <TextBlock Text="RMS Cafe" Foreground="{StaticResource BrandGold}" FontSize="20" FontWeight="Bold"/>
+                    <TextBlock Text="Management System" Foreground="#AAAAAA" FontSize="12" Margin="0,2,0,0"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1">
+                    <Button Content="Dashboard" Style="{StaticResource SidebarButtonStyle}" Click="NavDashboard_Click"/>
+                    <!-- Active State -->
+                    <Button Content="POS Terminal" Style="{StaticResource SidebarButtonStyle}" Foreground="{StaticResource BrandGold}" Background="#151515" BorderBrush="{StaticResource BrandGold}"/>
+                    <Button Content="Inventory" Style="{StaticResource SidebarButtonStyle}" Click="NavInventory_Click"/>
+                    <Button Content="Employees" Style="{StaticResource SidebarButtonStyle}" Click="NavEmployees_Click"/>
+                    <Button Content="Reports" Style="{StaticResource SidebarButtonStyle}" Click="NavReports_Click"/>
+                    <Button Content="Payroll (CSV Export)" Style="{StaticResource SidebarButtonStyle}" Click="NavPayroll_Click"/>
+                    <Button Content="Audit Logs" Style="{StaticResource SidebarButtonStyle}" Click="NavAuditLogs_Click"/>
+                    <Button Content="Settings" Style="{StaticResource SidebarButtonStyle}" Click="NavSettings_Click"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Margin="20">
+                    <Border Background="#2A2A2A" Padding="10" CornerRadius="4" Margin="0,0,0,20">
+                        <StackPanel>
+                            <TextBlock Text="Secure &amp; Reliable" Foreground="{StaticResource BrandGold}" FontSize="12" FontWeight="SemiBold"/>
+                            <TextBlock Text="Your data is protected with role-based access and audit logging." Foreground="#888888" FontSize="11" TextWrapping="Wrap" Margin="0,5,0,0"/>
+                        </StackPanel>
+                    </Border>
+                    <TextBlock Text="RMS Cafe v1.0.0" Foreground="#666666" FontSize="11"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- MAIN POS AREA -->
+        <Grid Grid.Row="0" Grid.Column="1" Background="#F4F6F8" Margin="0,0,2,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Top Header -->
+            <Border Grid.Row="0" Background="White" Padding="25,20">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <TextBlock Text="POS Terminal" FontSize="20" FontWeight="SemiBold" Foreground="{StaticResource TextDark}"/>
+                        <TextBlock Text="Create a new sale" FontSize="13" Foreground="{StaticResource TextLight}" Margin="0,2,0,0"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                        <TextBlock Text="Admin User" FontWeight="SemiBold" TextAlignment="Right"/>
+                        <TextBlock Text="Administrator" Foreground="{StaticResource TextLight}" FontSize="12" TextAlignment="Right"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <!-- Search and Tabs -->
+            <StackPanel Grid.Row="1" Margin="25,15,25,0">
+                <Grid Margin="0,0,0,15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBox Grid.Column="0" Padding="10,8" BorderBrush="#DDDDDD" Text="Search products by name or scan barcode..." Foreground="{StaticResource TextLight}" VerticalContentAlignment="Center"/>
+
+                    <Button Grid.Column="1" Width="40" Margin="10,0,0,0" Style="{StaticResource OutlineButtonStyle}" Click="BtnViewToggle_Click">
+                        <TextBlock Text="|||" FontWeight="Bold" Foreground="{StaticResource TextLight}"/>
+                    </Button>
+                    <Button Grid.Column="2" Content="⏸ Hold Sale" Margin="10,0,0,0" Style="{StaticResource OutlineButtonStyle}" Click="BtnHoldSale_Click"/>
+                    <Button Grid.Column="3" Content="••• More" Margin="10,0,0,0" Style="{StaticResource OutlineButtonStyle}" Click="BtnMoreOptions_Click"/>
+                </Grid>
+
+                <StackPanel Orientation="Horizontal" Background="Transparent">
+                    <RadioButton Content="All Items" Style="{StaticResource CategoryTabStyle}" IsChecked="True"/>
+                    <RadioButton Content="Coffee" Style="{StaticResource CategoryTabStyle}"/>
+                    <RadioButton Content="Hot Drinks" Style="{StaticResource CategoryTabStyle}"/>
+                    <RadioButton Content="Cold Drinks" Style="{StaticResource CategoryTabStyle}"/>
+                    <RadioButton Content="Food" Style="{StaticResource CategoryTabStyle}"/>
+                    <RadioButton Content="Snacks" Style="{StaticResource CategoryTabStyle}"/>
+                    <RadioButton Content="Extras" Style="{StaticResource CategoryTabStyle}"/>
+                </StackPanel>
+            </StackPanel>
+
+            <!-- Product Grid -->
+            <ScrollViewer Grid.Row="2" Margin="20,10,0,10" VerticalScrollBarVisibility="Auto">
+                <ItemsControl x:Name="ProductGrid" Margin="5">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Background="White" Width="140" Height="160" Margin="5" CornerRadius="4">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="#DDDDDD" BlurRadius="5" ShadowDepth="1" Opacity="0.3"/>
+                                </Border.Effect>
+                                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <TextBlock Text="{Binding Name}" FontWeight="SemiBold" TextAlignment="Center" Margin="0,0,0,10"/>
+                                    <!-- Replace this Rectangle with an Image tag later -->
+                                    <Rectangle Width="60" Height="60" Fill="#EAEAEA" Margin="0,0,0,10"/>
+                                    <TextBlock Text="{Binding Price}" Foreground="{StaticResource TextLight}" TextAlignment="Center"/>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+
+            <!-- Bottom Actions -->
+            <Grid Grid.Row="3" Margin="25,10,25,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Content="✎ Custom Item" Margin="0,0,5,0" Style="{StaticResource OutlineButtonStyle}" Click="BtnCustomItem_Click"/>
+                <Button Grid.Column="1" Content="% Discount" Margin="5,0,5,0" Style="{StaticResource OutlineButtonStyle}" Click="BtnDiscount_Click"/>
+                <Button Grid.Column="2" Content="📄 Note" Margin="5,0,5,0" Style="{StaticResource OutlineButtonStyle}" Click="BtnNote_Click"/>
+                <Button Grid.Column="3" Content="🗑 Clear Cart" Foreground="#E74C3C" Margin="5,0,0,0" Style="{StaticResource OutlineButtonStyle}" Click="BtnClearCart_Click"/>
+            </Grid>
+        </Grid>
+
+        <!-- ORDER SUMMARY (RIGHT PANEL) -->
+        <Border Grid.Row="0" Grid.Column="2" Background="White" BorderBrush="#EEEEEE" BorderThickness="1,0,0,0">
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Order Header -->
+                <Grid Grid.Row="0" Margin="0,0,0,20">
+                    <StackPanel>
+                        <TextBlock Text="{Binding OrderNumber}" Foreground="{StaticResource BrandGold}" FontSize="16" FontWeight="SemiBold"/>
+                        <TextBlock Text="{Binding OrderDate}" Foreground="{StaticResource TextLight}" FontSize="12"/>
+                    </StackPanel>
+                    <Button HorizontalAlignment="Right" VerticalAlignment="Top" Background="Transparent" BorderThickness="0" Foreground="#E74C3C" Click="BtnDeleteOrder_Click">
+                        <TextBlock Text="🗑" FontSize="16"/>
+                    </Button>
+                </Grid>
+
+                <!-- Column Headers -->
+                <Grid Grid.Row="1" Margin="0,0,0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="60"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="Item" Foreground="{StaticResource TextLight}" FontSize="12"/>
+                    <TextBlock Grid.Column="1" Text="Qty" Foreground="{StaticResource TextLight}" FontSize="12" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Column="2" Text="Price" Foreground="{StaticResource TextLight}" FontSize="12" HorizontalAlignment="Right"/>
+                    <TextBlock Grid.Column="3" Text="Total" Foreground="{StaticResource TextLight}" FontSize="12" HorizontalAlignment="Right"/>
+                </Grid>
+
+                <!-- Cart Items -->
+                <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
+                    <ItemsControl x:Name="CartGrid">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="#EEEEEE" BorderThickness="0,0,0,1" Padding="0,15">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="60"/>
+                                            <ColumnDefinition Width="50"/>
+                                            <ColumnDefinition Width="50"/>
+                                            <ColumnDefinition Width="20"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                            <TextBlock Text="{Binding Name}" FontWeight="SemiBold"/>
+                                            <TextBlock Text="{Binding Note}" Foreground="{StaticResource TextLight}" FontSize="11" Visibility="{Binding HasNote}"/>
+                                        </StackPanel>
+
+                                        <!-- Quantity Controls -->
+                                        <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <Button Content="-" Width="20" Height="20" Background="#EEEEEE" BorderThickness="0" Click="BtnDecreaseQty_Click"/>
+                                            <TextBlock Text="{Binding Qty}" Width="20" TextAlignment="Center" VerticalAlignment="Center"/>
+                                            <Button Content="+" Width="20" Height="20" Background="#EEEEEE" BorderThickness="0" Click="BtnIncreaseQty_Click"/>
+                                        </StackPanel>
+
+                                        <TextBlock Grid.Column="2" Text="{Binding UnitPrice}" Foreground="{StaticResource TextLight}" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                                        <TextBlock Grid.Column="3" Text="{Binding TotalPrice}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+
+                                        <Button Grid.Column="4" Content="×" Foreground="{StaticResource TextLight}" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right" Click="BtnRemoveItem_Click"/>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+
+                <!-- Payment Section -->
+                <StackPanel Grid.Row="3" Margin="0,20,0,0">
+                    <Grid Margin="0,0,0,20">
+                        <TextBlock Text="Total" FontSize="18" FontWeight="SemiBold"/>
+                        <TextBlock Text="{Binding CartTotal}" FontSize="18" FontWeight="Bold" Foreground="{StaticResource BrandGold}" HorizontalAlignment="Right"/>
+                    </Grid>
+
+                    <Grid Margin="0,0,0,15">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" Content="💵 Cash" Margin="0,0,5,0" Style="{StaticResource OutlineButtonStyle}" Click="BtnPayCash_Click"/>
+                        <Button Grid.Column="1" Content="💳 Card" Margin="5,0,5,0" Style="{StaticResource OutlineButtonStyle}" Click="BtnPayCard_Click"/>
+                        <Button Grid.Column="2" Content="📱 Mobile" Margin="5,0,0,0" Style="{StaticResource OutlineButtonStyle}" Click="BtnPayMobile_Click"/>
+                    </Grid>
+
+                    <Button Background="{StaticResource BrandGold}" Foreground="White" FontSize="16" FontWeight="SemiBold" Padding="0,15" BorderThickness="0" Click="BtnPay_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="💳 Pay "/>
+                            <TextBlock Text="{Binding CartTotal}"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- BOTTOM STATUS BAR -->
+        <Border Grid.Row="1" Grid.ColumnSpan="3" Background="#111111">
+            <Grid Margin="15,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Text="🟢 Terminal: POS-01" Foreground="#AAAAAA" VerticalAlignment="Center" FontSize="12"/>
+                <TextBlock Grid.Column="2" Text="👤 Cashier: Admin User" Foreground="#AAAAAA" VerticalAlignment="Center" FontSize="12" Margin="0,0,40,0"/>
+                <TextBlock Grid.Column="3" Text="📅 25 Jun 2026" Foreground="#AAAAAA" VerticalAlignment="Center" FontSize="12" Margin="0,0,40,0"/>
+                <TextBlock Grid.Column="4" Text="⏰ 10:17 pm" Foreground="#AAAAAA" VerticalAlignment="Center" FontSize="12" Margin="0,0,40,0"/>
+
+                <Button Grid.Column="5" Content="▤ Open Cash Drawer" Background="Transparent" Foreground="#AAAAAA" BorderThickness="0" VerticalAlignment="Center" FontSize="12" Click="BtnOpenCashDrawer_Click"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

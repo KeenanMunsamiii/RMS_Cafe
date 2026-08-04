@@ -1,0 +1,279 @@
+﻿<Window x:Class="RMS_Cafe.Inventory"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RMS_Cafe"
+        mc:Ignorable="d"
+        Title="RMS Cafe - Inventory" Height="768" Width="1200"
+        WindowStartupLocation="CenterScreen" Background="#F4F6F8"
+        FontFamily="Segoe UI"
+        UseLayoutRounding="True"
+        SnapsToDevicePixels="True"
+        TextOptions.TextFormattingMode="Display"
+        TextOptions.TextRenderingMode="ClearType">
+
+    <Window.Resources>
+        <!-- Color Palette -->
+        <SolidColorBrush x:Key="BrandBlack" Color="#1E1E1E"/>
+        <SolidColorBrush x:Key="BrandGold" Color="#D4AF37"/>
+        <SolidColorBrush x:Key="TextDark" Color="#333333"/>
+        <SolidColorBrush x:Key="TextLight" Color="#888888"/>
+
+        <!-- Sidebar Button Style -->
+        <Style x:Key="SidebarButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="3,0,0,0"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="17,15"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="Center" Margin="{TemplateBinding Padding}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#2A2A2A"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Solid Button Style (Gold) -->
+        <Style x:Key="PrimaryButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource BrandGold}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="15,8"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="2">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="{TemplateBinding Padding}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Outline Button Style -->
+        <Style x:Key="OutlineButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#DDDDDD"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="15,8"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="{TemplateBinding Padding}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- DataGrid Styling -->
+        <Style TargetType="DataGrid">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="RowBackground" Value="White"/>
+            <Setter Property="AlternatingRowBackground" Value="#FAFAFA"/>
+            <Setter Property="HeadersVisibility" Value="Column"/>
+            <Setter Property="GridLinesVisibility" Value="Horizontal"/>
+            <Setter Property="HorizontalGridLinesBrush" Value="#EEEEEE"/>
+        </Style>
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="{StaticResource TextLight}"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Padding" Value="10,15"/>
+            <Setter Property="BorderThickness" Value="0,0,0,1"/>
+            <Setter Property="BorderBrush" Value="#DDDDDD"/>
+        </Style>
+        <Style TargetType="DataGridCell">
+            <Setter Property="Padding" Value="10,12"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="DataGridCell">
+                        <Border Padding="{TemplateBinding Padding}" Background="Transparent">
+                            <ContentPresenter VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="#FFF8E7"/>
+                    <!-- Very light gold -->
+                    <Setter Property="Foreground" Value="{StaticResource TextDark}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- SIDEBAR -->
+        <Border Grid.Row="0" Grid.Column="0" Background="{StaticResource BrandBlack}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Margin="20,30,20,30">
+                    <TextBlock Text="RMS Cafe" Foreground="{StaticResource BrandGold}" FontSize="20" FontWeight="Bold"/>
+                    <TextBlock Text="Management System" Foreground="#AAAAAA" FontSize="12" Margin="0,2,0,0"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1">
+                    <Button Content="Dashboard" Style="{StaticResource SidebarButtonStyle}" Click="NavDashboard_Click"/>
+                    <Button Content="POS Terminal" Style="{StaticResource SidebarButtonStyle}" Click="NavPOS_Click"/>
+                    <!-- Active State -->
+                    <Button Content="Inventory" Style="{StaticResource SidebarButtonStyle}" Foreground="{StaticResource BrandGold}" Background="#151515" BorderBrush="{StaticResource BrandGold}"/>
+                    <Button Content="Employees" Style="{StaticResource SidebarButtonStyle}" Click="NavEmployees_Click"/>
+                    <Button Content="Reports" Style="{StaticResource SidebarButtonStyle}" Click="NavReports_Click"/>
+                    <Button Content="Payroll (CSV Export)" Style="{StaticResource SidebarButtonStyle}" Click="NavPayroll_Click"/>
+                    <Button Content="Audit Logs" Style="{StaticResource SidebarButtonStyle}" Click="NavAuditLogs_Click"/>
+                    <Button Content="Settings" Style="{StaticResource SidebarButtonStyle}" Click="NavSettings_Click"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Margin="20">
+                    <Border Background="#2A2A2A" Padding="10" CornerRadius="4" Margin="0,0,0,20">
+                        <StackPanel>
+                            <TextBlock Text="Secure &amp; Reliable" Foreground="{StaticResource BrandGold}" FontSize="12" FontWeight="SemiBold"/>
+                            <TextBlock Text="Your data is protected with role-based access." Foreground="#888888" FontSize="11" TextWrapping="Wrap" Margin="0,5,0,0"/>
+                        </StackPanel>
+                    </Border>
+                    <TextBlock Text="RMS Cafe v1.0.0" Foreground="#666666" FontSize="11"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- MAIN CONTENT AREA -->
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Top Header -->
+            <Border Grid.Row="0" Background="White" Padding="25,20">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="Inventory Management" FontSize="20" FontWeight="SemiBold" Foreground="{StaticResource TextDark}"/>
+                        <TextBlock Text="Manage stock levels, pricing, and product categories" FontSize="13" Foreground="{StaticResource TextLight}" Margin="0,2,0,0"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                        <TextBlock Text="Admin User" FontWeight="SemiBold" TextAlignment="Right"/>
+                        <TextBlock Text="Administrator" Foreground="{StaticResource TextLight}" FontSize="12" TextAlignment="Right"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <!-- Inventory Content -->
+            <Grid Grid.Row="1" Margin="25">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Toolbar -->
+                <Grid Grid.Row="0" Margin="0,0,0,20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBox Grid.Column="0" Padding="10,8" BorderBrush="#DDDDDD" Text="Search items by name or SKU..." Foreground="{StaticResource TextLight}" VerticalContentAlignment="Center"/>
+
+                    <StackPanel Grid.Column="2" Orientation="Horizontal">
+                        <Button Content="Export CSV" Style="{StaticResource OutlineButtonStyle}" Margin="0,0,10,0" Click="BtnExport_Click"/>
+                        <Button Content="+ Add New Item" Style="{StaticResource PrimaryButtonStyle}" Click="BtnAddItem_Click"/>
+                    </StackPanel>
+                </Grid>
+
+                <!-- Data Table -->
+                <Border Grid.Row="1" Background="White" CornerRadius="4">
+                    <Border.Effect>
+                        <DropShadowEffect Color="#DDDDDD" BlurRadius="10" ShadowDepth="2" Opacity="0.5"/>
+                    </Border.Effect>
+
+                    <DataGrid x:Name="InventoryGrid" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="SKU" Binding="{Binding SKU}" Width="100"/>
+                            <DataGridTextColumn Header="Product Name" Binding="{Binding Name}" Width="*"/>
+                            <DataGridTextColumn Header="Category" Binding="{Binding Category}" Width="150"/>
+                            <DataGridTextColumn Header="Stock Qty" Binding="{Binding StockQuantity}" Width="100"/>
+                            <DataGridTextColumn Header="Unit Cost" Binding="{Binding UnitCost}" Width="100"/>
+                            <DataGridTextColumn Header="Retail Price" Binding="{Binding RetailPrice}" Width="100"/>
+
+                            <!-- Status Column with dynamic coloring based on stock level -->
+                            <DataGridTemplateColumn Header="Status" Width="120">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Status}" FontWeight="SemiBold" VerticalAlignment="Center" 
+                                                   Foreground="{Binding StatusColor}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <!-- Action Buttons per row -->
+                            <DataGridTemplateColumn Header="Actions" Width="100">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                            <Button Content="✎" Background="Transparent" BorderThickness="0" Foreground="{StaticResource BrandGold}" FontSize="16" Margin="0,0,10,0" Cursor="Hand" Click="BtnEditItem_Click"/>
+                                            <Button Content="🗑" Background="Transparent" BorderThickness="0" Foreground="#E74C3C" FontSize="16" Cursor="Hand" Click="BtnDeleteItem_Click"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Border>
+            </Grid>
+        </Grid>
+
+        <!-- STATUS BAR -->
+        <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Background="{StaticResource BrandBlack}">
+            <Grid Margin="15,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Text="📅 25 Jun 2026" Foreground="#AAAAAA" VerticalAlignment="Center" FontSize="12"/>
+                <TextBlock Grid.Column="2" Text="⏰ 10:45 am" Foreground="#AAAAAA" VerticalAlignment="Center" FontSize="12" Margin="0,0,30,0"/>
+                <TextBlock Grid.Column="3" Text="👤 Role: Administrator" Foreground="#AAAAAA" VerticalAlignment="Center" FontSize="12"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

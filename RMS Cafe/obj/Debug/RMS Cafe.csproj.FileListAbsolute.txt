@@ -1,0 +1,24 @@
+C:\Users\keena\Desktop\RMS Cafe\xaml\RMS Cafe\RMS Cafe\obj\Debug\RMS Cafe.csproj.AssemblyReference.cache
+C:\Users\keena\Desktop\RMS Cafe\xaml\RMS Cafe\RMS Cafe\obj\Debug\Dashboard.g.cs
+C:\Users\keena\Desktop\RMS Cafe\xaml\RMS Cafe\RMS Cafe\obj\Debug\App.g.cs
+C:\Users\keena\Desktop\RMS Cafe\xaml\RMS Cafe\RMS Cafe\obj\Debug\RMS Cafe_MarkupCompile.cache
+C:\Users\keena\Desktop\RMS Cafe\xaml\RMS Cafe\RMS Cafe\obj\Debug\RMS Cafe_MarkupCompile.lref
+C:\Users\keena\Desktop\RMS Cafe\xaml\RMS Cafe\RMS Cafe\bin\Debug\RMS Cafe.exe.config
+C:\Users\keena\Desktop\RMS Cafe\xaml\RMS Cafe\RMS Cafe\bin\Debug\RMS Cafe.exe
+C:\Users\keena\Desktop\RMS Cafe\xaml\RMS Cafe\RMS Cafe\bin\Debug\RMS Cafe.pdb
+C:\Users\keena\Desktop\RMS Cafe\xaml\RMS Cafe\RMS Cafe\obj\Debug\Dashboard.baml
+C:\Users\keena\Desktop\RMS Cafe\xaml\RMS Cafe\RMS Cafe\obj\Debug\RMS Cafe.g.resources
+C:\Users\keena\Desktop\RMS Cafe\xaml\RMS Cafe\RMS Cafe\obj\Debug\RMS_Cafe.Properties.Resources.resources
+C:\Users\keena\Desktop\RMS Cafe\xaml\RMS Cafe\RMS Cafe\obj\Debug\RMS Cafe.csproj.GenerateResource.cache
+C:\Users\keena\Desktop\RMS Cafe\xaml\RMS Cafe\RMS Cafe\obj\Debug\RMS Cafe.csproj.CoreCompileInputs.cache
+C:\Users\keena\Desktop\RMS Cafe\xaml\RMS Cafe\RMS Cafe\obj\Debug\RMS Cafe.exe
+C:\Users\keena\Desktop\RMS Cafe\xaml\RMS Cafe\RMS Cafe\obj\Debug\RMS Cafe.pdb
+C:\Users\keena\Desktop\RMS Cafe\xaml\RMS Cafe\RMS Cafe\obj\Debug\RMS Cafe.exe.config
+C:\Users\keena\Desktop\RMS Cafe\xaml\RMS Cafe\RMS Cafe\obj\Debug\POSTerminal.baml
+C:\Users\keena\Desktop\RMS Cafe\xaml\RMS Cafe\RMS Cafe\obj\Debug\POSTerminal.g.cs
+C:\Users\keena\Desktop\RMS Cafe\xaml\RMS Cafe\RMS Cafe\obj\Debug\Interface.g.cs
+C:\Users\keena\Desktop\RMS Cafe\xaml\RMS Cafe\RMS Cafe\obj\Debug\Inventory.g.cs
+C:\Users\keena\Desktop\RMS Cafe\xaml\RMS Cafe\RMS Cafe\obj\Debug\Interface.baml
+C:\Users\keena\Desktop\RMS Cafe\xaml\RMS Cafe\RMS Cafe\obj\Debug\Inventory.baml
+C:\Users\keena\Desktop\RMS Cafe\xaml\RMS Cafe\RMS Cafe\obj\Debug\Employees.g.cs
+C:\Users\keena\Desktop\RMS Cafe\xaml\RMS Cafe\RMS Cafe\obj\Debug\Employees.baml
